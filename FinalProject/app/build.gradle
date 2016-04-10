@@ -28,6 +28,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/free/AndroidManifest.xml'
+        }
+    }
 }
 
 dependencies {
@@ -40,7 +45,7 @@ dependencies {
     // compile project(':JokeTellerAndroidLib')
 }
 
-task runUdacityTests (dependsOn: [
+task runUdacityTests(dependsOn: [
         ':backend:appengineRun',
         ':app:connectedAndroidTest',
         ':backend:appengineStop'
