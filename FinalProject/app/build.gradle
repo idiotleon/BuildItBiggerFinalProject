@@ -34,20 +34,10 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     // Added for AdMob
     compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    freeCompile 'com.google.android.gms:play-services:8.4.0'
     compile project(path: ':backend', configuration: 'android-endpoints')
     // compile project(':joketellerjavalib')
     // compile project(':JokeTellerAndroidLib')
-}
-
-project(':backend'){
-    task startServer() {
-        appengineRun
-    }
-
-    task stopServer(){
-        appengineStop
-    }
 }
 
 task tests {
