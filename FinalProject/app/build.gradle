@@ -40,16 +40,8 @@ dependencies {
     // compile project(':JokeTellerAndroidLib')
 }
 
-task tests {
-    description = "Optional Components 3"
-
-    // printf "test-all"
-
-    // Start up the GCE development server
-    // backend:appengineRun
-
-    // Run all Android tests
-
-    // Shut down the GCE development server
-    // backend:appengineStop
-}
+task runUdacityTests (dependsOn: [
+        ':backend:appengineRun',
+        ':app:connectedAndroidTest',
+        ':backend:appengineStop'
+])
